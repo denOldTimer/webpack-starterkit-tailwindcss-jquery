@@ -1,0 +1,11 @@
+@import "./node_modules/tailwindcss/dist/base";
+
+@import "./node_modules/tailwindcss/dist/components";
+
+@import "./node_modules/tailwindcss/dist/utilities";
+
+// CUSTOM CSS
+
+body {
+    color: green;
+}

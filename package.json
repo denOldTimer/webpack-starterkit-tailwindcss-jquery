@@ -1,0 +1,43 @@
+{
+  "name": "webpack-tailwindcss",
+  "version": "1.0.0",
+  "description": "Webpack 4 starterkit with Tailwindcss",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "server": "webpack-dev-server",
+    "watch": "watch 'npm run build' ./src"
+  },
+  "keywords": [
+    "webpack4",
+    "html",
+    "Js",
+    "Tailwindcss",
+    "starter kit"
+  ],
+  "author": "denOldTimer",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "cssnano": "^4.1.10",
+    "file-loader": "^4.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "tailwindcss": "^1.0.5",
+    "terser-webpack-plugin": "^1.3.0",
+    "watch": "^1.0.2",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
