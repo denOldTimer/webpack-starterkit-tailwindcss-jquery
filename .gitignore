@@ -1,0 +1,27 @@
+
+###> php-storm ###
+.idea/*
+###< php-storm  ###
+
+###> vscode ###
+.vscode/*
+###< vscode ###
+
+###> npm ###
+/node_modules/*
+package-lock.json
+###< npm ###
+
+###> yarn ###
+yarn-error.log
+yarn.lock
+###< yarn ###
+
+###> composer ###
+composer.lock
+/vendor/*
+###< composer ###
+
+###> The build  ###
+/public/*
+###< The build ###
