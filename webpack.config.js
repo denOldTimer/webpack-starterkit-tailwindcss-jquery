@@ -1,6 +1,8 @@
 const path = require("path");
 const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
+const tailwindcss = require("tailwindcss");
+const pimport = require("postcss-import");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
@@ -51,7 +53,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.scss/,
+        test: /\.s?css/,
         use: [
           MiniCssExtractPlugin.loader,
           //{ loader: "style-loader" },
@@ -60,20 +62,18 @@ module.exports = {
           },
           {
             loader: "postcss-loader",
-            options: { plugins: () => [autoprefixer()] }
+            options: {
+              plugins: () => [
+                pimport(),
+                tailwindcss("tailwind.config.js"),
+                autoprefixer()
+              ]
+            }
           },
           {
             loader: "sass-loader",
             options: { plugins: () => [autoprefixer()] }
           }
-        ]
-      },
-      {
-        test: /\.css/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          { loader: "css-loader", options: { importloaders: 1 } },
-          { loader: "postcss-loader" }
         ]
       }
     ]
