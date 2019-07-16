@@ -1,1 +1,5 @@
-import "../sass/app.scss";
+$(document).ready(function() {
+  $("#nav-btn").click(function() {
+    $("#nav-reveal").toggle();
+  });
+});

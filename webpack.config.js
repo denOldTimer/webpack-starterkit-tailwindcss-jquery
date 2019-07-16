@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -11,7 +12,7 @@ module.exports = {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
   },
   entry: {
-    main: "./src/js/app.js"
+    main: "./src/js/entry.js"
   },
   output: {
     path: path.resolve(__dirname, "public"),
@@ -65,6 +66,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    }),
     new MiniCssExtractPlugin({
       //options similar to same options in WebpackOptions.output
       //both options are optional
