@@ -17,13 +17,21 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "[name].bundle.js"
+    //publicPath: "/public"
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [{ loader: "babel-loader" }]
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"]
+            }
+          }
+        ]
       },
       {
         test: /\.html$/,
@@ -33,7 +41,12 @@ module.exports = {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/,
         use: [
           {
-            loader: "file-loader"
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "img/",
+              publicPath: "img/"
+            }
           }
         ]
       },
